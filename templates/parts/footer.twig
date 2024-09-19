@@ -1,0 +1,8 @@
+    <footer>
+        <p>&copy; {{ "now"|date("Y") }} {{ site.name }}</p>
+    </footer>
+    {% block wp_footer %}
+        {{ wp_footer() }}
+    {% endblock %}
+    </body>
+</html>

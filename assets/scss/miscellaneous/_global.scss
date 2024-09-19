@@ -1,0 +1,105 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+body {
+    margin: 0;
+    padding: 0;
+    background: url('/wp-content/themes/learning-theme/assets/img/body-bg.png');
+    // cursor: none;
+}
+.container {
+    max-width: 1152px;
+    margin: auto;
+    @include mobile() {
+        padding: 0 14px;
+    }
+}
+a {
+    font-family: 'Lekton Bold';
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+p {
+    font-family: 'Lekton';
+    font-weight: bold;
+    line-height: 30px;
+}
+h1 {
+    font-family: 'Lekton Bold';
+    font-size: 78px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+}
+h2 {
+    font-family: 'Lekton Bold';
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+h3 {
+    font-family: 'Lekton Bold';
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+}
+button {
+    color: $white;
+    border: none;
+    font-family: 'Lekton Bold';
+    font-size: 14px;
+    line-height: 46px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #4458dc 0%, $cool-mysterious-blue-tinged-purple 100%), radial-gradient(circle at top left, #4458dc, $cool-mysterious-blue-tinged-purple);
+}
+img {
+    width: 100%;
+}
+  .custom-cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+  }
+  
+  .cursor-dot {
+    width: 10px;
+    height: 10px;
+    background-color: $cool-mysterious-blue-tinged-purple;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  
+  .cursor-circle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid $cool-mysterious-blue-tinged-purple;
+    background-color: $cool-mysterious-blue-tinged-purple;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    opacity: 0.6;
+    transition: all 0.1s ease;
+  }
+  
+  /* Hover effect */
+  .cursor-circle.enlarge {
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+  

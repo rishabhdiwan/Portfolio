@@ -1,0 +1,92 @@
+{% include 'parts/header.twig' %}
+{# Banner #}
+<div id = "home" class = "rd-web-banner">
+    <div id="particles-js" class = "particles-effect banner-section">
+        <div class = "container">
+            <div class = "banner">
+                <div class = "side introduction">
+                    <h1>Rishabh Diwan</span></h1>
+                    <h3>I'm a Frontend Developer</h3>
+                </div>
+                <div class = "side image">
+                    <img src = "/wp-content/themes/learning-theme/assets/img/programming-animate.svg" alt = "rishabh-is-coding"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# About #}
+<div class = "rd-web-about" id = "about">
+    <div class = "container">
+        <div class = "about-section-wrapper">
+            <div class = "side">
+                <img src = "/wp-content/themes/learning-theme/assets/img/about-us.png" />
+            </div>
+            <div class = "side">
+                <h2>{{ title }}</h2>
+                <p>{{ body }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Technical Skills #}
+<div class = "rd-web-technical-skills" id = "technical-skills">
+    <div class = "container">
+        <h2>Technical Skills</h2>
+        <div class = "list-of-languages">
+            <h3>Languages</h3>
+            <div class= "skill-icons">
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/html.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/css.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/javascript.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/php.png" /></div>
+            </div>
+        </div>
+        <div class = "list-of-cms">
+            <h3>CMS</h3>
+            <div class= "skill-icons">
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/wordpress.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/drupal.png" /></div>
+            </div>
+        </div>
+        <div class = "list-of-libraries-and-tools">
+            <h3>Frameworks/Libraries/Tools</h3>
+            <div class= "skill-icons">
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/sass.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/git.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/Stripe.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/ddev.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/lando.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/docker.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/Bootstrap.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/tailwind.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/npm.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/composer.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/jquery2.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/laravel.png" /></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Projects #}
+<div class = "rd-web-projects" id = "projects">
+    <div class = "container">
+        {% for project in projects %}
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.post_content }}</p>
+            <img src = "{{ project.thumbnail }}" />
+        {% endfor %}
+        {% for term in project_terms %}
+            <h4>{{ term.name }}</h4>
+        {% endfor %}
+    </div>
+</div>
+
+{# Contact Us #}
+<div class = "" id = "contact-us">
+</div>
+
+{% include 'parts/footer.twig' %}

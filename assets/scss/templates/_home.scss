@@ -1,0 +1,79 @@
+.rd-web-custom-home-class {
+    // Banner Section
+    .banner-section {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        .banner {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .introduction {
+                flex: 0 0 48%;
+                align-self: center;
+                h1 {
+                    margin-bottom: 2rem;
+                }
+            }
+            .image {
+                flex: 0 0 48%;
+                align-self: center;
+                img {
+                    width: 100%;
+                    height: 660px;
+                    @include mobile() {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+            .side {
+                @include mobile() {
+                    flex: 0 0 100%;
+                }
+            }
+        }
+        canvas {
+            position: relative;
+            z-index: 2;
+        }
+    }
+    // About Section
+    .rd-web-about {
+        padding-top: 4rem;
+        .about-section-wrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .side {
+                flex: 0 0 45%;
+                @include mobile() {
+                    flex: 0 0 100%;
+                }
+            }
+        }
+    }
+    // Technical Skills
+    .rd-web-technical-skills {
+        padding-top: 8rem;
+        .skill-icons {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .icon {
+                flex: 0 0 15%;
+                @include mobile() {
+                    flex: 0 0 100%;
+                }
+                i {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
