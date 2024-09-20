@@ -24,5 +24,6 @@ $context['project_terms'] = Timber::get_terms([
     'count' => true,
 ]);
 
+$context['lets_talk'] = do_shortcode('[contact-form-7 id="474d839" title="Let Talk!"]');
 Timber::render( 'home.twig', $context );
 ?>

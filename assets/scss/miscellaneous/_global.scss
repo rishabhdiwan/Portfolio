@@ -52,6 +52,24 @@ h3 {
     letter-spacing: 3px;
     margin: 0;
 }
+input {
+    padding: 15px;
+    font-size: 1rem;
+    font-family: 'Lekton';
+    font-weight: bold;
+}
+input[type = submit] {
+    color: $white;
+    border: none;
+    font-family: 'Lekton Bold';
+    font-size: 14px;
+    line-height: 46px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #4458dc 0%, $cool-mysterious-blue-tinged-purple 100%), radial-gradient(circle at top left, #4458dc, $cool-mysterious-blue-tinged-purple);
+}
 button {
     color: $white;
     border: none;

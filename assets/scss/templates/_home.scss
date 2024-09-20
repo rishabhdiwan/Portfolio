@@ -10,9 +10,7 @@
             z-index: 1;
             top: 50%;
             transform: translateY(-50%);
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            @include general_flexbox_usage();
             .introduction {
                 flex: 0 0 48%;
                 align-self: center;
@@ -47,9 +45,7 @@
     .rd-web-about {
         padding-top: 4rem;
         .about-section-wrapper {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            @include general_flexbox_usage();
             .side {
                 flex: 0 0 45%;
                 @include mobile() {
@@ -62,9 +58,7 @@
     .rd-web-technical-skills {
         padding-top: 8rem;
         .skill-icons {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            @include general_flexbox_usage();
             .icon {
                 flex: 0 0 15%;
                 @include mobile() {
@@ -78,5 +72,16 @@
     }
     // Projects
     .rd-web-projects {
+        padding-top: 8rem;
+    }
+    // Contact Us
+    .contact-form-and-other-contact-means {
+        @include general_flexbox_usage();
+        .other-means-to-contact {
+            flex: 0 0 42%;
+        }
+        .contact-form {
+            flex: 0 0 58%;
+        }
     }
 }
