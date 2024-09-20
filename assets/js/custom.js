@@ -1,10 +1,10 @@
 // Box Shadow to header on scroll
-const header = document.querySelector('.header-section');
+const header = document.querySelector('.rd-web-header-section');
 window.addEventListener('scroll', function() {
   if (window.scrollY === 0) {
     header.style.boxShadow = 'none';
   } else {
-    header.style.boxShadow = '2px 0px 10px 0 #666';
+    header.style.boxShadow = '0 3px 10px 0 #666';
   }
 })
 // script.js
@@ -198,3 +198,54 @@ particlesJS("particles-js", {
     "retina_detect": true
   });
   
+jQuery(document).ready(function(paraM){
+  paraM('.rd-projects-slider').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+          breakpoint: 1024,
+          settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+          }
+      },
+      {
+          breakpoint: 600,
+          settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+          }
+      }
+  ]
+  });
+});
+
+// jQuery(document).ready(function($) {
+//   $('.rd-projects-slider').slick({
+//       slidesToShow: 2,
+//       slidesToScroll: 1,
+//       autoplay: true,
+//       autoplaySpeed: 500,
+//       arrows: true,
+//       dots: true,
+//       responsive: [
+//         {
+//             breakpoint: 1024,
+//             settings: {
+//                 slidesToShow: 2,
+//                 slidesToScroll: 1
+//             }
+//         },
+//         {
+//             breakpoint: 600,
+//             settings: {
+//                 slidesToShow: 1,
+//                 slidesToScroll: 1
+//             }
+//         }
+//       ]
+//   });
+// });

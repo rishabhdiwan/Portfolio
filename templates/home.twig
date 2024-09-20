@@ -61,10 +61,12 @@
                 <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/lando.png" /></div>
                 <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/docker.png" /></div>
                 <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/Bootstrap.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/slick.png" /></div>
                 <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/tailwind.png" /></div>
                 <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/npm.png" /></div>
                 <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/composer.png" /></div>
                 <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/jquery2.png" /></div>
+                <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/twig.png" /></div>
                 <div class = "icon"><img src = "/wp-content/themes/learning-theme/assets/img/laravel.png" /></div>
             </div>
         </div>
@@ -74,14 +76,23 @@
 {# Projects #}
 <div class = "rd-web-projects" id = "projects">
     <div class = "container">
-        {% for project in projects %}
-            <h4>{{ project.title }}</h4>
-            <p>{{ project.post_content }}</p>
-            <img src = "{{ project.thumbnail }}" />
-        {% endfor %}
-        {% for term in project_terms %}
+        <h2>Projects that I worked on</h2>
+        <div class = "rd-projects-slider">
+            {% for project in projects %}
+                <div class = "slide">
+                    <div class = "project-image">
+                        <img src = "{{ project.thumbnail }}" />
+                    </div>
+                    <div class = "details">
+                        <h4>{{ project.title }}</h4>
+                        <p>{{ project.post_content }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {# {% for term in project_terms %}
             <h4>{{ term.name }}</h4>
-        {% endfor %}
+        {% endfor %} #}
     </div>
 </div>
 
