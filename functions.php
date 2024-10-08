@@ -9,12 +9,14 @@ if ( ! class_exists( 'Timber' ) ) {
 // Theme Enqueue
 function learning_theme_enqueue() {
     wp_enqueue_script('particles-effect', get_template_directory_uri() . '/assets/particles.js-master/particles.min.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('aos-js', get_template_directory_uri() . '/assets/aos-master/dist/aos.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('slick-js', get_template_directory_uri() . '/assets/slick-1.8.1/slick/slick.min.js', array('jquery'), '', true);
     wp_enqueue_script('custom-scr', get_template_directory_uri() . '/assets/build/js/custom.min.js', array('jquery'), '1.0', true);
     wp_enqueue_style('slick-css', get_template_directory_uri() . '/assets/slick-1.8.1/slick/slick.css');
+    wp_enqueue_style('aos-css', get_template_directory_uri() . '/assets/aos-master/dist/aos.css');
     wp_enqueue_style('slick-theme-css', get_template_directory_uri() . '/assets/slick-1.8.1/slick/slick-theme.css');
-    wp_enqueue_script('slick-js', get_template_directory_uri() . '/assets/slick-1.8.1/slick/slick.min.js', array('jquery'), '', true);
-    wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/assets/build/css/style.min.css');
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/assets/icons/fontawesome-660-web/css/all.min.css');
+    wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/assets/build/css/style.min.css');
 } 
 add_action('wp_enqueue_scripts', 'learning_theme_enqueue');
 
@@ -42,9 +44,3 @@ class StarterSite extends Timber\Site {
 }
 
 new StarterSite();
-
-// Custom Cursor Effect
-echo '<div class="custom-cursor">
-    <div class="cursor-dot"></div>
-    <div class="cursor-circle"></div>
-</div>';

@@ -5,6 +5,7 @@
         height: 100vh;
         width: 100%;
         overflow: hidden;
+        box-sizing: border-box;
         .banner {
             position: absolute;
             z-index: 1;
@@ -43,7 +44,7 @@
     }
     // About Section
     .rd-web-about {
-        padding-top: 4rem;
+        padding: 8rem 0;
         .about-section-wrapper {
             @include general_flexbox_usage();
             .side {
@@ -56,32 +57,81 @@
     }
     // Technical Skills
     .rd-web-technical-skills {
-        padding-top: 8rem;
-        .skill-icons {
-            @include general_flexbox_usage();
-            .icon {
-                flex: 0 0 15%;
-                @include mobile() {
-                    flex: 0 0 100%;
+        padding-top: 4rem;
+        .sub-sections {
+            margin: 2rem 0;
+            .skill-icons {
+                // padding: 2rem 0;
+                @include general_flexbox_usage();
+                .icon {
+                    flex: 0 0 10%;
+                    margin: 2rem 3.5rem 2rem 0;
+                    cursor: pointer;
+                    @include mobile() {
+                        flex: 0 0 20%;
+                        margin: 2rem 1rem 2rem 0;
+                    }
+                    i {
+                        width: 100%;
+                    }
                 }
-                i {
-                    width: 100%;
+                .icon:hover {
+                    transform: scale(1.48);
                 }
+            }
+            .cms {
+                display: flex;
+                justify-content: left;
+                flex-wrap: wrap;
             }
         }
     }
     // Projects
     .rd-web-projects {
-        padding-top: 8rem;
+        padding-top: 4rem;
+        .rd-projects-slider {
+            .slide {
+                margin: 0 2rem 0 0;
+                @include mobile() {
+                    margin: 0;
+                }
+                .project-image {
+                    .project-thumbnail {
+                        border-radius: 20px 20px 0 0;
+                        height: 250px;
+                    }
+                }
+                .details {
+                    border-radius: 0 0 20px 20px;
+                    background-color: #efefff;
+                    border: 1px solid #e5cfff;
+                    padding: 1rem;
+                }
+                .details:hover {
+                    color: white;
+                    background-color: #845fee;
+                    border: none;
+                }
+            }
+        }
     }
     // Contact Us
-    .contact-form-and-other-contact-means {
-        @include general_flexbox_usage();
-        .other-means-to-contact {
-            flex: 0 0 42%;
-        }
-        .contact-form {
-            flex: 0 0 58%;
+    .rd-web-contact-details {
+        padding-top: 1rem;
+        .contact-form-and-other-contact-means {
+            @include general_flexbox_usage();
+            .other-means-to-contact {
+                flex: 0 0 42%;
+                @include mobile() {
+                    flex: 0 0 100%;
+                }
+            }
+            .contact-form {
+                flex: 0 0 50%;
+                @include mobile() {
+                    flex: 0 0 100%;
+                }
+            }
         }
     }
 }

@@ -80,8 +80,8 @@
             @include mobile() {
                 display: block;
             }
-            .hamburger {
-                animation: ringingBell 0.3s ease-in-out infinite;
+            .hamburger-animated {
+                animation: ringingBell 0.1s ease-in-out infinite;
             }
         }
     }

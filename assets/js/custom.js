@@ -1,3 +1,6 @@
+// AOS Initialization
+AOS.init();
+
 // Box Shadow to header on scroll
 const header = document.querySelector('.rd-web-header-section');
 window.addEventListener('scroll', function() {
@@ -55,6 +58,7 @@ const navItems = document.querySelectorAll('.navbar-mobile a');
 // Initiation
 navbar.style.left = '-85%';
 closeButton.style.display = 'none';
+ringingEffect();
 
 // Click Event
 hamburgerSection.addEventListener('click', hamburgerOpener);
@@ -84,6 +88,15 @@ function hamburgerr() {
   navbar.style.left = '-85%';
   closeButton.style.display = 'none';
   hamburger.style.display = 'block';
+}
+function ringingEffect() {
+  setInterval(() => {
+    if (hamburger.classList.contains('hamburger-animated')) {
+      hamburger.classList.remove('hamburger-animated');
+    } else {
+      hamburger.classList.add('hamburger-animated');
+    }
+  }, 1100);
 }
 
 // Particles JS
@@ -200,7 +213,7 @@ particlesJS("particles-js", {
   
 jQuery(document).ready(function(paraM){
   paraM('.rd-projects-slider').slick({
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -222,3 +235,25 @@ jQuery(document).ready(function(paraM){
   ]
   });
 });
+// Lazy Load
+document.addEventListener("DOMContentLoaded", function() {
+  const lazySVGs = document.querySelectorAll('.lazy-svg');
+
+  const svgObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const svg = entry.target;
+          if (entry.isIntersecting) {
+              const src = svg.getAttribute('data-src');
+              svg.src = `${src}?v=${new Date().getTime()}`; // ${src} is data-scr's value and ?v is query string and ${new Date().getTime()} is time elaped since the year 1970 and it connects tother to form an URL. 
+              console.log(svg.src);
+           } else {
+             svg.src = '';
+           }
+      });
+  });
+
+  lazySVGs.forEach(svg => {
+      svgObserver.observe(svg);
+  });
+});
+gsap.registerPlugin(ScrollTrigger);
