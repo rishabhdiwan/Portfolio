@@ -213,7 +213,7 @@ particlesJS("particles-js", {
   
 jQuery(document).ready(function(paraM){
   paraM('.rd-projects-slider').slick({
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,

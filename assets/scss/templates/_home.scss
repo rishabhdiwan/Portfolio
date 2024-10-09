@@ -81,11 +81,19 @@
                     gap: 21px;
                     justify-content: space-between;
                     align-items: center;  
-                    margin-top: 2rem;                  
+                    margin-top: 2rem;
+                    @include mobile() {
+                        grid-template-columns: repeat(4, minmax(60px, 1fr));
+                        gap: 25px;
+                    }
                     .icon {
                         width: 100px;
                         height: 100px;
                         cursor: pointer;
+                        @include mobile() {
+                            width: 60px;
+                            height: 60px;
+                        }
                     }
                     .icon:hover {
                         transform: scale(1.30);
@@ -116,12 +124,28 @@
                     background-color: #efefff;
                     border: 1px solid #e5cfff;
                     padding: 1rem;
+                    ul {
+                        list-style: disc;
+                        margin-bottom: 1.3rem;
+                    }
+                    h4 {
+                        margin: 0;
+                    }
+                    a {
+                        padding: 10px 20px;
+                        border-radius: 20px;
+                        color: $white;
+                        background-image: linear-gradient(to right, #4458dc 0%, $cool-mysterious-blue-tinged-purple 100%), radial-gradient(circle at top left, #4458dc, $cool-mysterious-blue-tinged-purple);
+                    }
+                    a:hover {
+                        background-image: linear-gradient(to left, #4458dc 0%, $cool-mysterious-blue-tinged-purple 100%), radial-gradient(circle at bottom right, #4458dc, $cool-mysterious-blue-tinged-purple);
+                    }
                 }
-                .details:hover {
-                    color: white;
-                    background-color: #845fee;
-                    border: none;
-                }
+                // .details:hover {
+                //     color: white;
+                //     background-color: #845fee;
+                //     border: none;
+                // }
             }
         }
     }
