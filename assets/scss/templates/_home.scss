@@ -44,7 +44,8 @@
     }
     // About Section
     .rd-web-about {
-        padding: 8rem 0;
+        margin: 8rem 0;
+        padding: 3rem 0;
         .about-section-wrapper {
             @include general_flexbox_usage();
             .side {
@@ -55,40 +56,49 @@
             }
         }
     }
+
     // Technical Skills
     .rd-web-technical-skills {
-        padding-top: 4rem;
-        .sub-sections {
-            margin: 2rem 0;
-            .skill-icons {
-                // padding: 2rem 0;
-                @include general_flexbox_usage();
-                .icon {
-                    flex: 0 0 10%;
-                    margin: 2rem 3.5rem 2rem 0;
-                    cursor: pointer;
-                    @include mobile() {
-                        flex: 0 0 20%;
-                        margin: 2rem 1rem 2rem 0;
-                    }
-                    i {
-                        width: 100%;
-                    }
-                }
-                .icon:hover {
-                    transform: scale(1.48);
-                }
+        margin: 8rem 0;
+        padding: 3rem 0;
+        .technical-skills {
+            display: grid;
+            grid-template-columns: 23.9% 23.9% 47.1%;
+            justify-content: space-between;
+            @include mobile() {
+                gap: 25px;
+                grid-template-columns: 1fr;
             }
-            .cms {
-                display: flex;
-                justify-content: left;
-                flex-wrap: wrap;
+            .card {
+                border-radius: 20px;
+                background-color: #efefff;
+                border: 1px solid #e5cfff;
+                padding: 1.3rem;
+                height: max-content;
+                .skill-icons {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                    gap: 21px;
+                    justify-content: space-between;
+                    align-items: center;  
+                    margin-top: 2rem;                  
+                    .icon {
+                        width: 100px;
+                        height: 100px;
+                        cursor: pointer;
+                    }
+                    .icon:hover {
+                        transform: scale(1.30);
+                    }
+                }
             }
         }
     }
+
     // Projects
     .rd-web-projects {
-        padding-top: 4rem;
+        margin: 8rem 0;
+        padding: 3rem 0;
         .rd-projects-slider {
             .slide {
                 margin: 0 2rem 0 0;
@@ -117,7 +127,8 @@
     }
     // Contact Us
     .rd-web-contact-details {
-        padding-top: 1rem;
+        margin: 8rem 0;
+        padding-top: 3rem;
         .contact-form-and-other-contact-means {
             @include general_flexbox_usage();
             .other-means-to-contact {
