@@ -2,6 +2,20 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+::selection {
+    background-color: #845fee;
+    color: $white;
+}
+input:focus {
+    border-color: #845fee;
+    box-shadow: 3px 2px 1px 1px #000;
+    outline: none;
+}
+textarea:focus {
+    border-color: #845fee;
+    box-shadow: 2px 3px 1px 1px #000;
+    outline: none;
+}
 body {
     overflow-x: hidden;
     background: url('/wp-content/themes/learning-theme/assets/img/body-bg.png');
@@ -91,8 +105,28 @@ input {
     font-size: 1rem;
     font-family: 'Lekton';
     font-weight: bold;
-    width: 100%;
+    border: 2px solid #000;
+    border-radius: 20px;
+    width: calc(100% - 10px);
+    @include mobile() {
+        width: unset;
+    }
 }
+::placeholder {
+    color: #000;
+}
+textarea {
+    padding: 15px;
+    font-size: 1rem;
+    font-family: 'Lekton';
+    font-weight: bold;
+    border: 2px solid #000;
+    border-radius: 20px;
+    @include mobile() {
+        width: unset;
+    }
+}
+
 input[type = submit] {
     color: $white;
     border: none;
@@ -103,6 +137,7 @@ input[type = submit] {
     cursor: pointer;
     padding: 10px 20px;
     border-radius: 20px;
+    width: 100%;
     background-image: linear-gradient(to right, #4458dc 0%, $cool-mysterious-blue-tinged-purple 100%), radial-gradient(circle at top left, #4458dc, $cool-mysterious-blue-tinged-purple);
 }
 input[type = submit]:hover {
@@ -121,24 +156,24 @@ button {
 img {
     width: 100%;
 }
-  .custom-cursor {
+.custom-cursor {
     position: fixed;
     pointer-events: none;
     z-index: 9999;
     left: 0;
     top: 0;
-  }
-  
-  .cursor-dot {
+}
+
+.cursor-dot {
     width: 10px;
     height: 10px;
     background-color: $cool-mysterious-blue-tinged-purple;
     border-radius: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
-  }
-  
-  .cursor-circle {
+}
+
+.cursor-circle {
     width: 30px;
     height: 30px;
     border: 2px solid $cool-mysterious-blue-tinged-purple;
@@ -148,14 +183,13 @@ img {
     transform: translate(-50%, -50%);
     opacity: 0.6;
     transition: all 0.1s ease;
-  }
-  
-  /* Hover effect */
-  .cursor-circle.enlarge {
+}
+
+/* Hover effect */
+.cursor-circle.enlarge {
     width: 40px;
     height: 40px;
     opacity: 1;
     transform: scale(1.2);
     opacity: 0.3;
-  }
-  
+}
