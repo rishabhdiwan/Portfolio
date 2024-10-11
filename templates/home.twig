@@ -8,9 +8,10 @@
                     <h2>Welcome! I am,</h2>
                     <h1>Rishabh Diwan.</h1>
                     <p class = "typewriter">{{ animated_line }}</p>
+                    {# <a href = "/#contact-us">Rishabh</a> #}
                 </div>
                 <div class = "side image">
-                    <img data-src = "/wp-content/themes/learning-theme/assets/img/programming-animate.svg" alt = "rishabh-is-coding"/ class = "lazy-svg">
+                    <img data-src = "/wp-content/themes/learning-theme/assets/img/programming-animate.svg" alt = "rishabh-is-coding" class = "lazy-svg">
                 </div>
             </div>
         </div>
@@ -22,7 +23,7 @@
     <div class = "container">
         <div class = "about-section-wrapper">
             <div class = "side">
-                <img data-src = "/wp-content/themes/learning-theme/assets/img/creativity-animate.svg" loading="lazy" class = "lazy-svg"/>
+                <img data-src = "/wp-content/themes/learning-theme/assets/img/creativity-animate.svg" class = "lazy-svg"/>
             </div>
             <div class = "side">
                 <h2>{{ title }}</h2>
@@ -103,9 +104,31 @@
         <div class = "contact-form-and-other-contact-means">
             <div class = "contact-form">
                 {{ lets_talk }}
+                <div class = "my-contact-non-desktop">
+                    <h4>My Contact</h4>
+                    <div class = "detail">
+                        <i class="fa-solid fa-envelope fa-l" style="color: #845fee;"></i>
+                        <a href="mailto:a7xrishabhdiwan@gmail.com">{{ email }}</a>
+                    </div>
+                    <div class = "detail">
+                        <i class="fa-solid fa-phone fa-l" style="color: #845fee;"></i>
+                        <a href="tel:123-456-7890">{{ phone }}</a>
+                    </div>
+                </div>
             </div>
             <div class = "other-means-to-contact">
                 <img data-src = "/wp-content/themes/learning-theme/assets/img/emails-animate.svg" class = "lazy-svg"/>
+                <div class = "my-contact">
+                    <h4>My Contact</h4>
+                    <div class = "detail">
+                        <i class="fa-solid fa-envelope fa-l" style="color: #845fee;"></i>
+                        <a href="mailto:a7xrishabhdiwan@gmail.com">{{ email }}</a>
+                    </div>
+                    <div class = "detail">
+                        <i class="fa-solid fa-phone fa-l" style="color: #845fee;"></i>
+                        <a href="tel:123-456-7890">{{ phone }}</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

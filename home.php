@@ -6,9 +6,10 @@
 /* Projects Post Type */
 
 /* Banner Section and About Us */
+$context = Timber::context();
+$context['animated_line'] = do_shortcode( '[typed string0="A Frontend Developer," string1="With experience in Wordpress," string2="experience in Drupal," string3="and experience in Laravel." typeSpeed="40" startDelay="0" backSpeed="40" backDelay="500" loop="1"]' );
 $about_us = get_field('about_us');
 
-$context = Timber::context();
 $context['body_class'] = 'rd-web-custom-home-class';
 $context['title'] = $about_us['title'];
 $context['body'] = $about_us['body'];
@@ -44,8 +45,6 @@ $context['skill_11_lft'] = $tools_frameworks_and_libraries['skill_11_image'];
 $context['skill_12_lft'] = $tools_frameworks_and_libraries['skill_12_image'];
 $context['skill_13_lft'] = $tools_frameworks_and_libraries['skill_13_image'];
 
-$context['animated_line'] = do_shortcode( '[typed string0="A Frontend Developer," string1="With experience in Wordpress," string2="experience in Drupal," string3="and experience in Laravel." typeSpeed="40" startDelay="0" backSpeed="40" backDelay="500" loop="1"]' );
-
 $context['projects'] = Timber::get_posts([
     'post_type' => 'project',
     'posts_per_page' => -1,
@@ -56,7 +55,10 @@ $context['project_terms'] = Timber::get_terms([
     'taxonomy' => 'type_of_project',
     'count' => true,
 ]);
-
+/* Contact Section */
+$contact = get_field('contact');
+$context['email'] = $contact['email'];
+$context['phone'] = $contact['phone'];
 $context['lets_talk'] = do_shortcode('[contact-form-7 id="474d839" title="Let Talk!"]');
 Timber::render( 'home.twig', $context );
 ?>

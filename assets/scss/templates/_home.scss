@@ -46,6 +46,9 @@
                         height: 52px;
                     }
                 }
+                a {
+                    cursor: pointer;
+                }
             }
             .image {
                 flex: 0 0 46%;
@@ -113,7 +116,7 @@
                 height: max-content;
                 .skill-icons {
                     display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
                     gap: 21px;
                     justify-content: space-between;
                     align-items: center;  
@@ -127,8 +130,8 @@
                         gap: 39px;
                     }
                     .icon {
-                        width: 100px;
-                        height: 100px;
+                        width: 90px;
+                        height: 90px;
                         cursor: pointer;
                         @include mobile() {
                             width: 60px;
@@ -214,6 +217,25 @@
                 textarea {
                     width: calc(100% - 35px);
                 }
+                .my-contact-non-desktop {
+                    display: none;
+                    font-family: 'Lekton';
+                    font-weight: bold;
+                    line-height: 30px;
+                    font-size: 22px;
+                    font-size: 26px;
+                    margin-top:3rem;
+                    @include mobile() {
+                        display: block;
+                    }
+                    .detail {
+                        margin: 0.5rem 0;
+                        a {
+                            text-transform: lowercase;
+                            color: $black;
+                        }
+                    }
+                }
             }
             .other-means-to-contact {
                 flex: 0 0 42%;
@@ -222,6 +244,35 @@
                 @include mobile() {
                     flex: 0 0 100%;
                     bottom: 20px;
+                }
+                @include mobile() {
+                    img {
+                        margin-bottom: 5rem;
+                    }
+                }
+                .my-contact {
+                    font-family: 'Lekton';
+                    font-weight: bold;
+                    line-height: 30px;
+                    font-size: 26px;
+                    position: absolute;
+                    bottom: -10px;
+                    left: 40px;
+                    @include tablet() {
+                        left: 0;
+                    }
+                    .detail {
+                        margin: 0.5rem 0;
+                        a {
+                            text-transform: lowercase;
+                            color: $black;
+                        }
+                    }
+                }
+                @include mobile() {
+                    .my-contact {
+                        display: none;
+                    }
                 }
             }
         }
