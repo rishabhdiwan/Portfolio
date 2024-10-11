@@ -44,6 +44,8 @@ $context['skill_11_lft'] = $tools_frameworks_and_libraries['skill_11_image'];
 $context['skill_12_lft'] = $tools_frameworks_and_libraries['skill_12_image'];
 $context['skill_13_lft'] = $tools_frameworks_and_libraries['skill_13_image'];
 
+$context['animated_line'] = do_shortcode( '[typed string0="A Frontend Developer," string1="With experience in Wordpress," string2="experience in Drupal," string3="and experience in Laravel." typeSpeed="40" startDelay="0" backSpeed="40" backDelay="500" loop="1"]' );
+
 $context['projects'] = Timber::get_posts([
     'post_type' => 'project',
     'posts_per_page' => -1,

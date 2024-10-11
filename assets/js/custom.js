@@ -1,5 +1,5 @@
 // AOS Initialization
-AOS.init();
+// AOS.init();
 
 // Box Shadow to header on scroll
 const header = document.querySelector('.rd-web-header-section');
