@@ -21,10 +21,12 @@
                 width: 100%;
             }
             @include tablet() {
+                flex-flow: column-reverse;
                 text-align: center;
-                top: 35%;
-                transform: translateY(-35%);
-                right: 1%;
+                top: 30%;
+                left: 50%;
+                transform: translate(-50%, -30%);
+                width: 100%;
             }
             .introduction {
                 width: 600px;
@@ -74,7 +76,7 @@
                         height: 300px;
                     }
                     @include tablet() {
-                        height: 550px;
+                        height: 450px;
                     }
                 }
             }
@@ -86,7 +88,10 @@
     }
     // About Section
     .rd-web-about {
-        padding: 3rem 0;
+        padding: 5rem 0;
+        @include mobile() {
+            padding: 1rem 0;
+        }
         .about-section-wrapper {
             @include general_flexbox_usage();
             .side {
@@ -94,8 +99,8 @@
                 @include mobile() {
                     flex: 0 0 100%;
                 }
-                img {
-                    height: 100%;
+                .about-svg {
+                    height: 500px;
                 }
             }
         }
@@ -103,8 +108,7 @@
 
     // Technical Skills
     .rd-web-technical-skills {
-        // margin: 8rem 0;
-        padding: 3rem 0;
+        padding: 5rem 0;
         .technical-skills {
             display: grid;
             grid-template-columns: 23.9% 23.9% 47.1%;
@@ -164,8 +168,7 @@
 
     // Projects
     .rd-web-projects {
-        // margin: 8rem 0;
-        padding: 3rem 0;
+        padding: 5rem 0;
         .rd-projects-slider {
             .slide {
                 margin: 0 2rem 0 0;
@@ -205,8 +208,10 @@
     }
     // Contact Us
     .rd-web-contact-details {
-        // margin: 8rem 0;
-        padding-top: 3rem;
+        padding: 5rem 0;
+        @include tablet() {
+            padding: 6rem 0;
+        }
         .contact-form-and-other-contact-means {
             @include general_flexbox_usage();
             @include mobile() {
@@ -305,15 +310,10 @@
         cursor: pointer;
         z-index: 3;
         box-shadow: 3px 5px 2px 0 $black;
-       a {
-            color: $white;
-            text-transform: uppercase;
-            font-size: 25px;
-            text-align: center;
-            span {
-                display: block;
-            }
-        }
+        color: $white;
+        text-transform: uppercase;
+        font-size: 25px;
+        text-align: center;
         @include mobile() {
             display: none;
         }
