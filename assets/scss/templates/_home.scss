@@ -14,7 +14,11 @@
             @include general_flexbox_usage();
             @include mobile() {
                 text-align: center;
-                right: 0.51%;
+                flex-flow: column-reverse;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
             }
             @include tablet() {
                 text-align: center;
@@ -23,13 +27,16 @@
                 right: 1%;
             }
             .introduction {
+                width: 600px;
                 flex: 0 0 54%;
                 align-self: center;
                 @include mobile() {
                     flex: 0 0 100%;
+                    width: unset;
                 }
                 @include tablet() {
                     flex: 0 0 100%;
+                    width: unset;
                 }
                 h1 {
                     margin-bottom: 5rem;
@@ -64,7 +71,7 @@
                     width: 100%;
                     height: 600px;
                     @include mobile() {
-                        width: 100%;
+                        height: 300px;
                     }
                     @include tablet() {
                         height: 550px;
@@ -79,7 +86,6 @@
     }
     // About Section
     .rd-web-about {
-        margin: 8rem 0;
         padding: 3rem 0;
         .about-section-wrapper {
             @include general_flexbox_usage();
@@ -88,13 +94,16 @@
                 @include mobile() {
                     flex: 0 0 100%;
                 }
+                img {
+                    height: 100%;
+                }
             }
         }
     }
 
     // Technical Skills
     .rd-web-technical-skills {
-        margin: 8rem 0;
+        // margin: 8rem 0;
         padding: 3rem 0;
         .technical-skills {
             display: grid;
@@ -155,7 +164,7 @@
 
     // Projects
     .rd-web-projects {
-        margin: 8rem 0;
+        // margin: 8rem 0;
         padding: 3rem 0;
         .rd-projects-slider {
             .slide {
@@ -196,7 +205,7 @@
     }
     // Contact Us
     .rd-web-contact-details {
-        margin: 8rem 0;
+        // margin: 8rem 0;
         padding-top: 3rem;
         .contact-form-and-other-contact-means {
             @include general_flexbox_usage();
@@ -227,12 +236,19 @@
                     margin-top:3rem;
                     @include mobile() {
                         display: block;
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
                     }
                     .detail {
-                        margin: 0.5rem 0;
+                        // margin-right: 3rem;
                         a {
                             text-transform: lowercase;
                             color: $black;
+                        }
+                        img {
+                            width: 28px;
+                            height: 23px;
                         }
                     }
                 }
@@ -245,11 +261,6 @@
                     flex: 0 0 100%;
                     bottom: 20px;
                 }
-                @include mobile() {
-                    img {
-                        margin-bottom: 5rem;
-                    }
-                }
                 .my-contact {
                     font-family: 'Lekton';
                     font-weight: bold;
@@ -258,14 +269,19 @@
                     position: absolute;
                     bottom: -10px;
                     left: 40px;
+                    @include general_flexbox_usage();
                     @include tablet() {
                         left: 0;
                     }
                     .detail {
-                        margin: 0.5rem 0;
+                        margin-right: 2rem;
                         a {
                             text-transform: lowercase;
                             color: $black;
+                        }
+                        img {
+                            width: 32px;
+                            height: 27px;
                         }
                     }
                 }
@@ -276,5 +292,36 @@
                 }
             }
         }
+    }
+    .hire {
+        background-color: #845fee;
+        margin: 3rem;
+        padding: 1rem;
+        display: inline-block;
+        position: fixed;
+        right: 0;
+        bottom: 1rem;
+        border-radius: 26px;
+        cursor: pointer;
+        z-index: 3;
+        box-shadow: 3px 5px 2px 0 $black;
+       a {
+            color: $white;
+            text-transform: uppercase;
+            font-size: 25px;
+            text-align: center;
+            span {
+                display: block;
+            }
+        }
+        @include mobile() {
+            display: none;
+        }
+    }
+    .animated {
+        animation: ringingBell 0.5s ease-in-out infinite;
+    }
+    .animated:hover {
+        animation: none;
     }
 }

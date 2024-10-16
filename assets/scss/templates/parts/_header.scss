@@ -48,6 +48,31 @@
                 }
             }
         }
+        .hire-mobile {
+            display: none;
+            @include mobile() {
+                display: inline-block;
+                background-color: #845fee;
+                padding: 0.6rem 0.7rem 0.5rem 1rem;
+                border-radius: 26px;
+                cursor: pointer;
+               a {
+                    color: $white;
+                    text-transform: uppercase;
+                    font-size: 21px;
+                    text-align: center;
+                    span {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .animated {
+            animation: none;
+        }
+        .animated:active {
+            animation: none;
+        }
         .navbar {
             @include mobile() {
                 display: none;
@@ -89,29 +114,10 @@
             @include tablet() {
                 display: block;
             }
-            .hamburger-animated {
-                animation: ringingBell 0.1s ease-in-out infinite;
-            }
         }
     }
 }
-@keyframes ringingBell {
-    0% {
-      transform: rotate(0deg);
-    }
-    25% {
-      transform: rotate(20deg);
-    }
-    50% {
-      transform: rotate(0deg);
-    }
-    75% {
-      transform: rotate(-20deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-}  
+
 .navbar-mobile {
     display: none;
     @include mobile() {

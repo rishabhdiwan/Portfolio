@@ -1,18 +1,19 @@
 // AOS Initialization
-// AOS.init();
+document.addEventListener("DOMContentLoaded", function() {
+  AOS.init();
+});
 
 // Box Shadow to header on scroll
-const header = document.querySelector('.rd-web-header-section');
-window.addEventListener('scroll', function() {
-  if (window.scrollY === 0) {
-    header.style.boxShadow = 'none';
-  } else {
-    header.style.boxShadow = '0 3px 10px 0 #666';
-  }
+document.addEventListener("DOMContentLoaded", function() {
+  const header = document.querySelector('.rd-web-header-section');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY === 0) {
+      header.style.boxShadow = 'none';
+    } else {
+      header.style.boxShadow = '0 3px 10px 0 #666';
+    }
+  })
 })
-// script.js
-
-// script.js
 
 document.addEventListener('mousemove', (event) => {
   const cursorDot = document.querySelector('.cursor-dot');
@@ -49,35 +50,34 @@ document.addEventListener('mouseout', (event) => {
 //////////////
 // Hamburger/
 ////////////
-const navbar = document.querySelector('.navbar-mobile');
-const hamburgerSection = document.querySelector('.hamburger-section');
-const hamburger = document.querySelector('.hamburger');
-const closeButton = document.querySelector('.close-button');
-const navItems = document.querySelectorAll('.navbar-mobile a');
+document.addEventListener("DOMContentLoaded", function() {
+  const navbar = document.querySelector('.navbar-mobile');
+  const hamburgerSection = document.querySelector('.hamburger-section');
+  const hamburger = document.querySelector('.hamburger');
+  const closeButton = document.querySelector('.close-button');
+  const navItems = document.querySelectorAll('.navbar-mobile a');
 
-// Initiation
-navbar.style.left = '-85%';
-closeButton.style.display = 'none';
-ringingEffect();
+  // Initiation
+  navbar.style.left = '-85%';
+  closeButton.style.display = 'none';
 
-// Click Event
-hamburgerSection.addEventListener('click', hamburgerOpener);
+  // Click Event
+  hamburgerSection.addEventListener('click', hamburgerOpener);
 
-// Close when clicked outside and open when clicked on a Menu item
-document.addEventListener('click', function(click) {
-  if (!navbar.contains(click.target) && !hamburgerSection.contains(click.target)) {
-    hamburgerr();
-  }
-  navItems.forEach((navItem) => {
-    console.log(navItem);
-    if (navItem.contains(click.target)) {
-      setTimeout(() => {
-        hamburgerr();
-      }, 800);
+  // Close when clicked outside and open when clicked on a Menu item
+  document.addEventListener('click', function(click) {
+    if (!navbar.contains(click.target) && !hamburgerSection.contains(click.target)) {
+      hamburgerr();
     }
+    navItems.forEach((navItem) => {
+      console.log(navItem);
+      if (navItem.contains(click.target)) {
+        setTimeout(() => {
+          hamburgerr();
+        }, 800);
+      }
+    })
   })
-})
-
 // Hamburger Opening Function
 function hamburgerOpener() {
   navbar.style.left = navbar.style.left === '-85%' ? '-0px' : '-85%';
@@ -89,15 +89,19 @@ function hamburgerr() {
   closeButton.style.display = 'none';
   hamburger.style.display = 'block';
 }
-function ringingEffect() {
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  const hireFloatingButton = document.querySelector('.hire');
   setInterval(() => {
-    if (hamburger.classList.contains('hamburger-animated')) {
-      hamburger.classList.remove('hamburger-animated');
+    if (hireFloatingButton.classList.contains('animated')) {
+      hireFloatingButton.classList.remove('animated');
     } else {
-      hamburger.classList.add('hamburger-animated');
+      hireFloatingButton.classList.add('animated');
     }
-  }, 1100);
-}
+  }, 2000);
+});
+
 
 // Particles JS
 particlesJS("particles-js", {

@@ -18,7 +18,7 @@ textarea:focus {
 }
 body {
     overflow-x: hidden;
-    background: url('/wp-content/themes/learning-theme/assets/img/body-bg.png');
+    background: url('/wp-content/themes/rishabh-d-portfolio/assets/img/body-bg.png');
     margin: 0;
     padding: 0;
     // cursor: none;
@@ -238,4 +238,42 @@ img {
     opacity: 1;
     transform: scale(1.2);
     opacity: 0.3;
+}
+
+// Animation
+@keyframes ringingBell {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    75% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+}
+@keyframes zoom {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+.zoom {
+    animation: zoom 0.5s ease-in-out infinite
+}
+// usage:- ringingBell 0.1s ease-in-out infinite
+
+.typed-cursor {
+    display: none;
 }

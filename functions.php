@@ -7,7 +7,7 @@ if ( ! class_exists( 'Timber' ) ) {
     return;
 }
 // Theme Enqueue
-function learning_theme_enqueue() {
+function rishabh_d_portfolio_enqueue() {
     wp_enqueue_script('particles-effect', get_template_directory_uri() . '/assets/particles.js-master/particles.min.js', array('jquery'), '1.0', true);
     wp_enqueue_script('aos-js', get_template_directory_uri() . '/assets/aos-master/dist/aos.js', array('jquery'), '1.0', true);
     wp_enqueue_script('slick-js', get_template_directory_uri() . '/assets/slick-1.8.1/slick/slick.min.js', array('jquery'), '', true);
@@ -18,7 +18,7 @@ function learning_theme_enqueue() {
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/assets/icons/fontawesome-660-web/css/all.min.css');
     wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/assets/build/css/style.min.css');
 } 
-add_action('wp_enqueue_scripts', 'learning_theme_enqueue');
+add_action('wp_enqueue_scripts', 'rishabh_d_portfolio_enqueue');
 
 // Timber global context and more
 Timber::$dirname = array('templates');
