@@ -6,7 +6,6 @@
 
 /* Context will pass variables to twig templates */ 
 $context = Timber::context();
-$context['posts'] = new Timber\PostQuery();
 
 /* Animated Lines */
 $context['animated_line_greetings'] = do_shortcode( '[typed string0="Welcome! I am" typeSpeed="30" startDelay="0" backSpeed="40" backDelay="500" loopCount="0"]' );
@@ -65,6 +64,7 @@ $contact = get_field('contact');
 $context['email'] = $contact['email'];
 $context['linked'] = $contact['linked'];
 $context['lets_talk'] = do_shortcode('[contact-form-7 id="474d839" title="Let Talk!"]');
+
 /* It will render the data in twig files */
 Timber::render( 'index.twig', $context );
 ?>
