@@ -52,7 +52,7 @@
             display: none;
             @include mobile() {
                 display: inline-block;
-                background-color: #845fee;
+                background-color: $cool-mysterious-blue-tinged-purple;
                 padding: 0.6rem 0.7rem 0.5rem 1rem;
                 border-radius: 26px;
                 cursor: pointer;
