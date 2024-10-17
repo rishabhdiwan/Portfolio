@@ -1,110 +1,35 @@
-// AOS Initialization
-document.addEventListener("DOMContentLoaded", function() {
+//////////////////////////
+// LIBRARIES INIT CODE //
+////////////////////////
+document.addEventListener("DOMContentLoaded", function(param) {
+  // ----- AOS Initialization ----- //
   AOS.init();
-});
-
-// Box Shadow to header on scroll
-document.addEventListener("DOMContentLoaded", function() {
-  const header = document.querySelector('.rd-web-header-section');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY === 0) {
-      header.style.boxShadow = 'none';
-    } else {
-      header.style.boxShadow = '0 3px 10px 0 #666';
-    }
-  })
-})
-
-document.addEventListener('mousemove', (event) => {
-  const cursorDot = document.querySelector('.cursor-dot');
-  const cursorCircle = document.querySelector('.cursor-circle');
-
-  // Update cursor position
-  requestAnimationFrame(() => {
-    cursorDot.style.left = `${event.clientX}px`;
-    cursorDot.style.top = `${event.clientY}px`;
-
-    cursorCircle.style.left = `${event.clientX}px`;
-    cursorCircle.style.top = `${event.clientY}px`;
-  });
-});
-
-document.addEventListener('mouseover', (event) => {
-  const cursorCircle = document.querySelector('.cursor-circle');
-
-  // Check if the target is a link or a button with an href
-  if (event.target.tagName === 'A' || (event.target.tagName === 'BUTTON' && event.target.hasAttribute('href'))) {
-    cursorCircle.classList.add('enlarge');
-  }
-});
-
-document.addEventListener('mouseout', (event) => {
-  const cursorCircle = document.querySelector('.cursor-circle');
-
-  // Check if the target was a link or a button with an href
-  if (event.target.tagName === 'A' || (event.target.tagName === 'BUTTON' && event.target.hasAttribute('href'))) {
-    cursorCircle.classList.remove('enlarge');
-  }
-});
-
-//////////////
-// Hamburger/
-////////////
-document.addEventListener("DOMContentLoaded", function() {
-  const navbar = document.querySelector('.navbar-mobile');
-  const hamburgerSection = document.querySelector('.hamburger-section');
-  const hamburger = document.querySelector('.hamburger');
-  const closeButton = document.querySelector('.close-button');
-  const navItems = document.querySelectorAll('.navbar-mobile a');
-
-  // Initiation
-  navbar.style.left = '-85%';
-  closeButton.style.display = 'none';
-
-  // Click Event
-  hamburgerSection.addEventListener('click', hamburgerOpener);
-
-  // Close when clicked outside and open when clicked on a Menu item
-  document.addEventListener('click', function(click) {
-    if (!navbar.contains(click.target) && !hamburgerSection.contains(click.target)) {
-      hamburgerr();
-    }
-    navItems.forEach((navItem) => {
-      console.log(navItem);
-      if (navItem.contains(click.target)) {
-        setTimeout(() => {
-          hamburgerr();
-        }, 800);
+  // ----- Projects Slider ----- //
+  param('.rd-projects-slider').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
       }
-    })
-  })
-// Hamburger Opening Function
-function hamburgerOpener() {
-  navbar.style.left = navbar.style.left === '-85%' ? '-0px' : '-85%';
-  hamburger.style.display = hamburger.style.display === 'none' ? 'block' : 'none';
-  closeButton.style.display = closeButton.style.display === 'none' ? 'block' : 'none';
-}
-function hamburgerr() {
-  navbar.style.left = '-85%';
-  closeButton.style.display = 'none';
-  hamburger.style.display = 'block';
-}
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-  const hireFloatingButton = document.querySelector('.hire');
-  setInterval(() => {
-    if (hireFloatingButton.classList.contains('animated')) {
-      hireFloatingButton.classList.remove('animated');
-    } else {
-      hireFloatingButton.classList.add('animated');
-    }
-  }, 2000);
-});
-
-
-// Particles JS
-particlesJS("particles-js", {
+  ]
+  });
+  
+  // ----- Particles Effect ----- //
+  particlesJS("particles-js", {
     "particles": {
       "number": {
         "value": 100,
@@ -214,50 +139,127 @@ particlesJS("particles-js", {
     },
     "retina_detect": true
   });
-  
-jQuery(document).ready(function(paraM){
-  paraM('.rd-projects-slider').slick({
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    responsive: [
-      {
-          breakpoint: 1024,
-          settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1
-          }
-      },
-      {
-          breakpoint: 600,
-          settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-          }
-      }
-  ]
-  });
 });
-// Lazy Load
+
+/////////////////////
+// CUSTOM JS CODE //
+///////////////////
 document.addEventListener("DOMContentLoaded", function() {
-  const lazySVGs = document.querySelectorAll('.lazy-svg');
+  // ----- Box Shadow to header on scroll ----- //
+  document.addEventListener("DOMContentLoaded", function() {
+    const header = document.querySelector('.rd-web-header-section');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY === 0) {
+        header.style.boxShadow = 'none';
+      } else {
+        header.style.boxShadow = '0 3px 10px 0 #666';
+      }
+    })
+  })
 
-  const svgObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const svg = entry.target;
-          if (entry.isIntersecting) {
-              const src = svg.getAttribute('data-src');
-              svg.src = `${src}?v=${new Date().getTime()}`; // ${src} is data-scr's value and ?v is query string and ${new Date().getTime()} is time elaped since the year 1970 and it connects tother to form an URL. 
-              console.log(svg.src);
-           } else {
-             svg.src = '';
-           }
-      });
+  ///----- Hamburger ----- //
+  const navbar = document.querySelector('.navbar-mobile');
+  const hamburgerSection = document.querySelector('.hamburger-section');
+  const hamburger = document.querySelector('.hamburger');
+  const closeButton = document.querySelector('.close-button');
+  const navItems = document.querySelectorAll('.navbar-mobile a');
+
+  // Initiation
+  navbar.style.left = '-85%';
+  closeButton.style.display = 'none';
+
+  // Click Event
+  hamburgerSection.addEventListener('click', hamburgerOpener);
+
+  // Close when clicked outside and open when clicked on a Menu item
+  document.addEventListener('click', function(click) {
+    if (!navbar.contains(click.target) && !hamburgerSection.contains(click.target)) {
+      hamburgerr();
+    }
+    navItems.forEach((navItem) => {
+      console.log(navItem);
+      if (navItem.contains(click.target)) {
+        setTimeout(() => {
+          hamburgerr();
+        }, 800);
+      }
+    })
+  })
+  // Hamburger Opening Function
+  function hamburgerOpener() {
+    navbar.style.left = navbar.style.left === '-85%' ? '-0px' : '-85%';
+    hamburger.style.display = hamburger.style.display === 'none' ? 'block' : 'none';
+    closeButton.style.display = closeButton.style.display === 'none' ? 'block' : 'none';
+  }
+  function hamburgerr() {
+    navbar.style.left = '-85%';
+    closeButton.style.display = 'none';
+    hamburger.style.display = 'block';
+  }
+
+  
+  // ----- Floating Button (Hire) ----- //  
+  const hireFloatingButton = document.querySelector('.hire');
+  setInterval(() => {
+    if (hireFloatingButton.classList.contains('animated')) {
+      hireFloatingButton.classList.remove('animated');
+    } else {
+      hireFloatingButton.classList.add('animated');
+    }
+  }, 2000);
+
+  
+  // ----- Lazy Load ----- //
+  document.addEventListener("DOMContentLoaded", function() {
+    const lazySVGs = document.querySelectorAll('.lazy-svg');
+
+    const svgObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const svg = entry.target;
+            if (entry.isIntersecting) {
+                const src = svg.getAttribute('data-src');
+                svg.src = `${src}?v=${new Date().getTime()}`; // ${src} is data-scr's value and ?v is query string and ${new Date().getTime()} is time elaped since the year 1970 and it connects tother to form an URL. 
+                console.log(svg.src);
+            } else {
+              svg.src = '';
+            }
+        });
+    });
+
+    lazySVGs.forEach(svg => {
+        svgObserver.observe(svg);
+    });
   });
 
-  lazySVGs.forEach(svg => {
-      svgObserver.observe(svg);
+  
+  // ----- Mouse following style ----- //
+  document.addEventListener('mousemove', (event) => {
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorCircle = document.querySelector('.cursor-circle');
+  
+    // Update cursor position
+    requestAnimationFrame(() => {
+      cursorDot.style.left = `${event.clientX}px`;
+      cursorDot.style.top = `${event.clientY}px`;
+
+      cursorCircle.style.left = `${event.clientX}px`;
+      cursorCircle.style.top = `${event.clientY}px`;
+    });
+  });
+  document.addEventListener('mouseover', (event) => {
+    const cursorCircle = document.querySelector('.cursor-circle');
+
+    // Check if the target is a link or a button with an href
+    if (event.target.tagName === 'A' || (event.target.tagName === 'BUTTON' && event.target.hasAttribute('href'))) {
+      cursorCircle.classList.add('enlarge');
+    }
+  });  
+  document.addEventListener('mouseout', (event) => {
+    const cursorCircle = document.querySelector('.cursor-circle');
+
+    // Check if the target was a link or a button with an href
+    if (event.target.tagName === 'A' || (event.target.tagName === 'BUTTON' && event.target.hasAttribute('href'))) {
+      cursorCircle.classList.remove('enlarge');
+    }
   });
 });
-gsap.registerPlugin(ScrollTrigger);

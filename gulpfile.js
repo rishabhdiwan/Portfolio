@@ -34,8 +34,8 @@ function scripts() {
 // }
 
 function watchTask() {
-  browserSync.init({        
-    proxy: "http://wp-for-twig.ddev.site/"
+  browserSync.init({
+    proxy: "http://portfolio.ddev.site/"
   });
   watch(['./assets/scss/**/*.scss'], { interval: 1000 }, parallel(style));
   watch(['./assets/js/**/*.js'], { interval: 1000 }, parallel(scripts));
